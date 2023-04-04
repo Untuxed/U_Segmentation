@@ -1,4 +1,10 @@
 import cv2
+import tkinter as tk
+from tkinter import filedialog
 
-cap = cv2.VideoCapture('D:/OneDrive/OneDrive - University of Pittsburgh/Research/Projects/NormalData/UrethralShape/SymptomaticUrethralShape/urethraSlingStudy/data_fromHenry/Pre op/SS076_pre/SS076_20220302_150724_0000.avi')
+root = tk.Tk()
+root.withdraw()
+
+file_path = filedialog.askopenfilename()
+cap = cv2.VideoCapture(file_path)
 print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
