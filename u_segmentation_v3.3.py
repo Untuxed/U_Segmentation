@@ -391,7 +391,9 @@ class MainPanel(wx.Panel, MainFrame):
                 self.w = 733
                 self.h = 617
         if self.w_main == 800:
-            self.scale = 122  # 122 pixels = 1cm
+            self.scale = 122 # 122 pixels = 1cm
+        # elif self.w_main == 1016:
+        #     self.scale = 156
         else:
             self.scale = 115  # 115 pixels = 1cm
         if self.ruler_tool == True:
