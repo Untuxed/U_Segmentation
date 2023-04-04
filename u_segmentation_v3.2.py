@@ -486,7 +486,7 @@ class MainPanel(wx.Panel, MainFrame):
                     # img = img[43:680, 64:821]
                 elif self.w_main == 800 and sys.platform == "win32":
                     img = cv2.resize(img, (0, 0), fx=0.75, fy=0.75)
-                if self.angle_pts != []:
+                if self.angle_pts:
                     for pnt in self.angle_pts:
                         cv2.circle(img, pnt, 3, (0, 255, 0), 1)
                 if self.num_angle_pts == 3:
@@ -504,16 +504,16 @@ class MainPanel(wx.Panel, MainFrame):
                     cv2.putText(img, for_print, placement_tuple, self.font, 0.4, (0, 255, 0), 1, cv2.LINE_AA)
                 else:
                     self.angle_print = False
-                if self.pb_pts != []:
+                if self.pb_pts:
                     for pnt in self.pb_pts:
                         cv2.circle(img, pnt, 5, (0, 0, 255), 2)
-                if self.ant_pts != []:
+                if self.ant_pts:
                     for pnt in self.ant_pts:
                         cv2.polylines(img, [np.array(self.ant_pts)], True, (0, 255, 255), 1)
-                if self.post_pts != []:
+                if self.post_pts:
                     for pnt in self.post_pts:
                         cv2.polylines(img, [np.array(self.post_pts)], True, (0, 100, 255), 1)
-                if self.sling_pts != []:
+                if self.sling_pts:
                     for pnt in self.sling_pts:
                         cv2.polylines(img, [np.array(self.sling_pts)], True, (255, 0, 0), 1)
 
@@ -539,7 +539,7 @@ class MainPanel(wx.Panel, MainFrame):
                     # img = img[43:680, 64:821]
                 elif self.w_main == 800 and sys.platform == "win32":
                     img = cv2.resize(img, (0, 0), fx=0.75, fy=0.75)
-                if self.ruler_pts != []:
+                if self.ruler_pts:
                     for pnt in self.ruler_pts:
                         cv2.circle(img, pnt, 3, (0, 255, 0), 1)
                 if self.num_ruler_pts == 2:
@@ -554,13 +554,13 @@ class MainPanel(wx.Panel, MainFrame):
                     cv2.putText(img, for_print, placement_tuple, self.font, 0.4, (0, 255, 0), 1, cv2.LINE_AA)
                 else:
                     self.ruler_print = False
-                if self.pb_pts != []:
+                if self.pb_pts:
                     for pnt in self.pb_pts:
                         cv2.circle(img, pnt, 5, (0, 0, 255), 2)
-                if self.ant_pts != []:
+                if self.ant_pts:
                     for pnt in self.ant_pts:
                         cv2.polylines(img, [np.array(self.ant_pts)], True, (0, 255, 255), 1)
-                if self.post_pts != []:
+                if self.post_pts:
                     for pnt in self.post_pts:
                         cv2.polylines(img, [np.array(self.post_pts)], True, (0, 100, 255), 1)
                 cv2.imshow('Select Points to Measure', img)
@@ -600,16 +600,16 @@ class MainPanel(wx.Panel, MainFrame):
                     self.post_pts = self.old_points
                 if self.point_type == "SLING":
                     self.sling_pts = self.old_points
-                if self.pb_pts != []:
+                if self.pb_pts:
                     for pnt in self.pb_pts:
                         cv2.circle(prev, pnt, 5, (0, 0, 255), 2)
-                if self.ant_pts != []:
+                if self.ant_pts:
                     for pnt in self.ant_pts:
                         cv2.polylines(prev, [np.array(self.ant_pts)], True, (0, 255, 255), 1)
-                if self.post_pts != []:
+                if self.post_pts:
                     for pnt in self.post_pts:
                         cv2.polylines(prev, [np.array(self.post_pts)], True, (0, 100, 255), 1)
-                if self.sling_pts != []:
+                if self.sling_pts:
                     for pnt in self.sling_pts:
                         cv2.polylines(prev, [np.array(self.sling_pts)], True, (255, 0, 0), 1)
                 if len(self.pb_pts) > 0:
